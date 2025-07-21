@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
 import {HomeComponent} from './home/home.component';
 import {WrapperComponent, WrapperConfig} from './shared/wrapper/wrapper.component';
+import {startWith} from './starts-with';
 
 export const routes: Routes = [
   {
@@ -24,7 +25,7 @@ export const routes: Routes = [
     }
   },
   {
-    path: 'mfe2',
+    matcher: startWith('mfe2'),
     component: WrapperComponent,
     data: {
       config: {
