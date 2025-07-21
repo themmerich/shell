@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, inject, NgZone} from '@angular/core';
 import {RouterLink, RouterOutlet} from '@angular/router';
 
 @Component({
@@ -8,5 +8,7 @@ import {RouterLink, RouterOutlet} from '@angular/router';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'shell';
+  constructor() {
+    (globalThis as any).ngZone = inject(NgZone);
+  }
 }

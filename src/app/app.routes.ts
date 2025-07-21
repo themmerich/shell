@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
 import {HomeComponent} from './home/home.component';
-import {loadRemoteModule} from '@angular-architects/native-federation';
+import {WrapperComponent, WrapperConfig} from './shared/wrapper/wrapper.component';
 
 export const routes: Routes = [
   {
@@ -14,10 +14,24 @@ export const routes: Routes = [
   },
   {
     path: 'mfe1',
-    loadComponent: () => loadRemoteModule('mfe1', './Component')
+    component: WrapperComponent,
+    data: {
+      config: {
+        remoteName: 'mfe1',
+        exposedModule: './web-comp',
+        elementName: 'mfe1-root'
+      } as WrapperConfig
+    }
   },
   {
     path: 'mfe2',
-    loadComponent: () => loadRemoteModule('mfe2', './Component')
+    component: WrapperComponent,
+    data: {
+      config: {
+        remoteName: 'mfe2',
+        exposedModule: './web-comp',
+        elementName: 'mfe2-root'
+      } as WrapperConfig
+    }
   }
 ];
