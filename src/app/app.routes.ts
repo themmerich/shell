@@ -43,18 +43,8 @@ export const routes: Routes = [
         remoteName: 'mfe3',
         exposedModule: './web-comp',
         elementName: 'mfe3-root'
-      } as WrapperConfig
-    }
-  },
-  {
-    path: 'mfe4',
-    component: WrapperComponent,
-    data: {
-      config: {
-        remoteName: 'mfe4',
-        exposedModule: './web-comp',
-        elementName: 'mfe4-root'
-      } as WrapperConfig
+      } as WrapperConfig,
+      reuse: true
     }
   },
 ];
